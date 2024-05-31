@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="cricket.css">
+  <title>cricket game</title>
+</head>
+<body>
+  <center>
+  <main>
+  <h1>BAT 🏏 BALL 🥎 STUMP GAME</h1>
+  <div class="rules">
+
+    <h1>-------------Game Rules-------------</h1>
+  
+ <table border="1">
+  <tr>
+      <th>  player 1 </th>
+      <th>Player 2</th>
+      <th>winner </th>
+  </tr>
+  <tr>
+      <td> bat</td>
+      <td> ball</td>
+      <td> player 1 </td>
+  </tr>
+  <tr>
+      <td>ball</td>
+      <td> bat  </td>
+      <td> player 2</td>
+  </tr>
+  <tr>
+      <td>bat </td>
+      <td>stump</td>
+      <td>player 2</td>
+  </tr>
+  <tr>
+      <td>stump</td>
+      <td> bat</td>
+      <td>player 1</td>
+  </tr>
+  <tr>
+      <td>ball</td>
+      <td>stump</td>
+      <td> player 1</td>
+  </tr>
+  <tr>
+      <td> stump </td>
+      <td>ball</td>
+      <td> player 2</td>
+  </tr>
+</table>
+<h4 style="color: red;">If both choice is same It's a Tie </h4>
+</div>
+ <div class="container">
+  
+  <h2>Click Any of The Button </h2>
+
+
+ <!--   First Button ACTION------------------------->
+  <button class="button"
+  onclick="document.querySelector('#write1').innerHTML=`You have chosen Bat`;
+ let computerchoice= generateComputerChoice();
+ 
+  if(computerchoice === 'Ball'){
+    document.querySelector('#write3').innerHTML=`You won`;
+  }
+  else if(computerchoice === 'Stump'){
+    document.querySelector('#write3').innerHTML=`Computer Won `;
+  }
+  else{
+    document.querySelector('#write3').innerHTML=`It's a Tie`;  
+  }
+  ">Bat</button>
+
+<!--Second Button ACTION ------------------------------------------>
+
+  <button class="button" 
+  onclick="document.querySelector('#write1').innerHTML=`You have chosen Ball`;
+   computerchoice=generateComputerChoice();
+  if(computerchoice === 'Ball'){
+    document.querySelector('#write3').innerHTML=`It's a Tie`;
+  }
+  else if(computerchoice === 'Stump'){
+    document.querySelector('#write3').innerHTML=`You Won `;
+  }
+  else{
+    document.querySelector('#write3').innerHTML=`computer Won `;  
+  }
+  ">Ball</button>
+
+<!--Third button ACTION ----------------------------------------------->
+
+  <button class="button"
+  onclick="document.querySelector('#write1').innerHTML=`You have chosen Stump`;
+   computerchoice= generateComputerChoice();
+  if(computerchoice === 'Ball'){
+    document.querySelector('#write3').innerHTML=`computer Won`;
+  }
+  else if(computerchoice === 'Stump'){
+    document.querySelector('#write3').innerHTML=`It's a Tie `;
+  }
+  else{
+    document.querySelector('#write3').innerHTML=`You Won  `;  
+  }
+  "
+  >Stump</button>
+</div>
+
+<h2 id="write1"></h2>
+<h2 id="write2"></h2>
+<h2 id="write3" style="color: rgba(255, 38, 0, 0.806);"></h2>
+</main>
+</center>
+</body>
+
+<script>
+   
+  function generateComputerChoice(){
+  //this will generate random no between 0 and 3
+  let randomNumber = Math.random()*3;
+  let computerchoice;
+  if(randomNumber >0 && randomNumber<=1){
+    computerchoice='Bat';
+    // console.log('computer choice is Bat');
+  }
+  else if(randomNumber>1 && randomNumber<=2){
+    computerchoice='Ball';
+    // console.log('computer choice is Ball');
+  }
+  else{
+    computerchoice='Stump';
+    // console.log('computer choice is Stump');
+  }
+  document.querySelector('#write2').innerHTML=`computer choice is ${computerchoice}`;
+  return computerchoice;
+}
+
+// function getResult(userchoice, computerchoice){
+//   if(computerchoice === userchoice){
+//     document.querySelector('#write3').innerHTML=`It's a Tie`;
+//   }
+//   else if(computerchoice === 'Stump' && userchoice==='bat'){
+//     document.querySelector('#write3').innerHTML=`Computer Won `;
+//   }
+//   else if(computerchoice === 'bat' && userchoice==='ball'){
+//     document.querySelector('#write3').innerHTML=`Computer Won `;  
+//   }
+//   else if(computerchoice === 'ball'&& userchoice==='bat'){
+//     document.querySelector('#write3').innerHTML=`You Won `;  
+//   }
+//   else if(computerchoice === 'bat'&& userchoice==='Stump'){
+//     document.querySelector('#write3').innerHTML=`You Won `;  
+//   }
+//   else if(computerchoice === 'ball'&& userchoice==='Stump'){
+//     document.querySelector('#write3').innerHTML=`computer Won `;  
+//   }
+//   else if(computerchoice === 'Stump'&& userchoice==='bat'){
+//     document.querySelector('#write3').innerHTML=`You Won `;  
+//   }
+
+// }
+
+</script>
+</html>

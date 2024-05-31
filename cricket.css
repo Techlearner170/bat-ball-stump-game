@@ -1,0 +1,40 @@
+body{
+  text-align: center;
+  background-image:url(5494.jpg)
+
+
+}
+div{
+  border: 2px solid gray ;
+  background-color: white;
+  width: 80%;
+  height:40%;
+  padding:15px;
+  border-radius: 10px;
+
+}
+.container{
+  margin-top: 5%;
+  
+}
+
+.button{
+  width:30%;
+  height:45px;
+  margin:5px;
+  margin-bottom: 35px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(26, 170, 26, 0.708);
+  font-size: 20px;
+  color: rgb(3, 3, 3);
+  transition: 0.4s;
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: green;
+  color: white;
+
+
+}
